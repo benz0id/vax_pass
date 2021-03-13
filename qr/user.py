@@ -3,6 +3,10 @@ class User:
     """A class to store a user's data.
 
     ---Attributes---
+    vax - has the user been vaccinated? (Boolean)
+    first_name - user's first name (String)
+    last_name - user's last name (String)
+    birthday - user's date of birth (int: XXXXXXXX)
     # TODO
     """
 
