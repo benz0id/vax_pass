@@ -6,7 +6,7 @@ class User:
     vax - has the user been vaccinated? (Boolean)
     first_name - user's first name (String)
     last_name - user's last name (String)
-    birthday - user's date of birth (int: XXXXXXXX)
+    birthday - user's date of birth (int: YYYYMMDD)
     # TODO
     """
 
