@@ -17,12 +17,17 @@ class QR_Generator:
             border=4,
         )
 
-    def generate_simple_qr(self, name: str, userid: int, dest: str):
+    def generate_simple_qr(self, is_vax: bool, name: str, userid: int,
+                           dest: str):
         """Generates an unencrypted QR code containing the <name> and <userid>.
         Stores the QR code as a png in <dest>.
         """
+        if is_vax:
+            v_stat = "vax"
+        else:
+            v_stat = "novax"
         dest_path = os.path.join(dest, "qrcode.png")
-        self.qr.add_data(''.join([name, ':', str(userid)]))
+        self.qr.add_data(''.join([v_stat, ':', name, ':', str(userid)]))
         self.qr.make(fit=True)
         img = self.qr.make_image(fill_color="black", back_color="white")
         self.qr.clear()
