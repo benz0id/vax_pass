@@ -13,8 +13,14 @@ class QRReader:
         <path>. Returns a string if data is readable, none otherwise."""
 
         img = cv.imread(qr_path)
-        data, bbox, straight_qrcode = self.detector.detect(img)
-        if bbox 
+        data, pts, straight_qrcode = self.detector.detectAndDecode(img)
+        if pts is not None:
+            return data
+        else:
+            return None
+
+
+
 
 
 
