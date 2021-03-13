@@ -14,7 +14,7 @@ class QRReader:
 
         img = cv.imread(qr_path)
         data, bbox, straight_qrcode = self.detector.detect(img)
-        if bbox
+        if bbox 
 
 
 
