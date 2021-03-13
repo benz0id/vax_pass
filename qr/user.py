@@ -10,14 +10,57 @@ class User:
     # TODO
     """
 
-    def __init__(self, first_name, last_name, birthday):
+    def __init__(self):
         self._vax = None
-        self.first_name = first_name
-        self.last_name = last_name
-        self._birthday = birthday
+        self._first_name = ""
+        self._last_name = ""
+        self._birthday = 0
         #TODO
 
     def get_user_string(self) -> str:
         """Returns a succinct representation of the users attributes."""
-        return None #TODO
+        birthday_string = String(self._birthday)
+        birthday_string = birthday_string[0:4] + "/" + birthday_string[4:6] + "/" + birthday_string[6:8]
+        
+        vax_string = "Not Vaccinated"
+        if self._vax is True:
+            vax_string = "Vaccinated"
+        
+        user_string = """Name: {} {}
+Date of Birth: {}
+Vaccination Status: {}
+""".format(self._first_name, self._last_name, birthday_string, vax_string)
+        
+        return user_string #TODO
+    
+    def create_user():
+        # asks vaccination status (must be 'Yes' or 'No')
+        vax_input = ""
+        while vax_input != "Yes" or vax_input != "No":
+            vax_input = input("Have you been vaccinated? (Yes or No): ")
+        
+        # converts to Boolean
+        if vax_input == "Yes":
+            self._vax = True
+        else:
+            self._vax = False
+            
+        # gets name
+        self._first_name = input("What is your first name?: ")
+        self._last_name = input("What is your last name?: ")
+        
+        # gets birthday (must be 8 digits)
+        while self._birthday < 10000000 or self._birthday > 99999999:
+            self._birthday = int(input("What is your date of birth? (YYYYMMDD): "))
+        
+        
+        '''if vax == True:
+            print("{} {} has been vaccinated.".format(first_name, last_name))
+        else:
+            print("{} {} has not been vaccinated.".format(first_name, last_name))'''
+        
+        return
+
+
+        
 
