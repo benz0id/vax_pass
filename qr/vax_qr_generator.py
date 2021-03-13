@@ -34,6 +34,7 @@ class QRGenerator:
         img = self.qr.make_image(fill_color="black", back_color="white")
         self.qr.clear()
         img.save(dest_path)
+        # TODO handle image deletion
 
 
 
