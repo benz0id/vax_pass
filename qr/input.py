@@ -1,4 +1,4 @@
-def input():
+def user_input():
     vax_input = input("Have you been vaccinated? (Yes or No): ")
     vax = False
     if vax_input == "Yes":
