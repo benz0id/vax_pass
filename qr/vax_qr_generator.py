@@ -1,9 +1,8 @@
 import qrcode
 from PIL import Image
-from qrcode.image.pure import PymagingImage
 import os.path
 
-class QR_Generator:
+class QRGenerator:
     """A class designed to encode QR codes that transmit and interpret vaccine
     verification info.
     ---Attributes---
