@@ -1,6 +1,6 @@
 from qr_io_exceptions import QRReadError
 from typing import Tuple
-#from db_gateway.sheets_gw import LoadDatabaseError, SheetsGateway
+from db_gateway.sheets_gw import LoadDatabaseError, SheetsGateway
 
 class User:
     """A class to store a user's data.
@@ -10,8 +10,6 @@ class User:
     first_name - user's first name (String)
     last_name - user's last name (String)
     birthday - user's date of birth (int: YYYYMMDD)
-
-    # TODO
     add self._idnum
     change all functions to reflect this change
     """
