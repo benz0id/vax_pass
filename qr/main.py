@@ -1,4 +1,3 @@
-from input import *
 from vax_qr_generator import *
 from vax_qr_reader import *
 from user import *
