@@ -8,7 +8,10 @@ class User:
     first_name - user's first name (String)
     last_name - user's last name (String)
     birthday - user's date of birth (int: YYYYMMDD)
+    
     # TODO
+    add self._idnum
+    change all functions to reflect this change
     """
     _vax: bool
     _first_name: str

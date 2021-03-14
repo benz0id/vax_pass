@@ -1,8 +1,9 @@
-from input import *
+#from input import *
 from vax_qr_generator import *
 from vax_qr_reader import *
 from user import *
 
+#creates qr code and checks database
 
 user = User()
 user.create_user()
