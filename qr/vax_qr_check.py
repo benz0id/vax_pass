@@ -1,8 +1,6 @@
 from db_gateway.sheets_gw import SheetsGateway
 from qr.user import User
 from vax_qr_reader import *
-from sheets_gw import *
-#from user import *
 MAX_SCAN_TIME = 5
 
 class QRCheck:

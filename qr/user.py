@@ -87,7 +87,7 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
         self.create_user()
         sin = 0
         while sin < 100000000 or sin > 999999999:
-            sin = input("What is your SIN")
+            sin = int(input("What is your SIN: "))
 
         print("Validating...")
         try:
