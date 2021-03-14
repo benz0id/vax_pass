@@ -30,7 +30,7 @@ class QRCheck:
             if data[4] == user_ids[index]:
                 found = True
                 
-        if data[1] == first_names[index] and data[2] = last_names[index]:
+        if data[1] == first_names[index] and data[2] == last_names[index]:
             in_db = True
         
         return in_db
