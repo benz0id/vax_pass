@@ -1,6 +1,8 @@
 import cv2 as cv
 import os.path
+import pyzbar.pyzbar as pyzbar
 from qr_io_exceptions import QRReadError
+
 
 class QRReader:
     """Pulls COVID data from a QR code"""
@@ -20,3 +22,21 @@ class QRReader:
             return data
         else:
             raise QRReadError("Failed to fetch data from image")
+            
+        cap = cv2.VideoCapture(0)
+        
+        while True:
+            
+            -, frame = cap.read()
+            
+            decodedObjects = pyzbar.detectAndDecode(frame)
+            
+            for obj in decodedObjects:
+                print(obj.data)
+            
+            cv2.imshow("Frame",frame)
+            
+            key = cv2.keywait(1)
+            
+            if key == 27:
+                break
