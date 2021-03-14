@@ -11,5 +11,5 @@ This project uses the following:
 * opencv-python 4.5.1.48
 
 # Setup
-install my_creds.json in the qr folder
-run sheets_main
+* install my_creds.json in the qr folder
+* run sheets_main
