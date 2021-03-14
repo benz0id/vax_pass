@@ -8,8 +8,7 @@ user = User()
 user.create_user()
 print(user)
 
-'''qr = QRGenerator()
-qr.generate_simple_qr(vax, first, last, birthday, 0, os.path.join(
-    "qr_images_output"))'''
+qr = QRGenerator()
+qr.generate_simple_qr(user, os.path.join("qr_images_output"))
 #change
 

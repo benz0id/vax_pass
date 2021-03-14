@@ -26,7 +26,7 @@ class QRGenerator:
         """
 
         dest_path = os.path.join(dest, "qrcode.png")
-        self._qr.add_data(user.get_user_string())
+        self._qr.add_data(user.get_qr_data())
         self._qr.make(fit=True)
         img = self._qr.make_image(fill_color="black", back_color="white")
         self._qr.clear()
