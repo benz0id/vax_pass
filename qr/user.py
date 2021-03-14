@@ -8,7 +8,6 @@ class User:
     last_name - user's last name (String)
     birthday - user's date of birth (int: YYYYMMDD)
     # TODO
-    
     """
 
     def __init__(self):
