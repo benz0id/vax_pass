@@ -22,6 +22,7 @@ class User:
         birthday_string = str(self._birthday)
         birthday_string = birthday_string[0:4] + "/" + birthday_string[4:6] + "/" + birthday_string[6:8]
         
+        
         vax_string = "Not Vaccinated"
         if self._vax is True:
             vax_string = "Vaccinated"
