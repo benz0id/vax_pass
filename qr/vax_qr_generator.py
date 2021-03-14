@@ -10,7 +10,8 @@ class QRGenerator:
 
     """
     _qr: qrcode.QRCode
-
+    
+    #Initializes QRGenerator class
     def __init__(self):
         self._qr = qrcode.QRCode(
             version=1,

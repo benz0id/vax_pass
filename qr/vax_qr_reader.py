@@ -6,6 +6,7 @@ class QRReader:
     """Pulls COVID data from a QR code"""
     _detector: cv.QRCodeDetector
 
+    #Initializes QRReader class
     def __init__(self):
         self._detector = cv.QRCodeDetector()
 
