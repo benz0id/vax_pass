@@ -15,12 +15,12 @@ while True:
         while cmd != 'Show QR' or cmd != 'Read QR':
             cmd = input("Enter 'Read Qr' to validate another user's QR. Enter "
                         "'Show QR' to show your QR code.\n")
-            if cmd == 'ShowQR':
+            if cmd == 'Show QR':
                 generator.generate_simple_qr(user,
                                              os.path.join("qr_images_output"))
                 image = Image.open(os.path.join("qr_images_output",
                                                 "qrcode.png"))
-            else:
+            elif cmd == 'Read QR':
                 validator.scan_and_validate()
 
 

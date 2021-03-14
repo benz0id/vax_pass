@@ -30,7 +30,7 @@ class QRReader:
 
         data = ''
         crude_run_time = 0
-        while len(data.split(":")) != 4 & crude_run_time < runtime:
+        while len(data.split(":")) != 4 & crude_run_time < runtime * 2:
 
             _, frame = cap.read()
 
@@ -39,7 +39,6 @@ class QRReader:
             if len(data.split(":")) == 4:
                 return data
 
-            print(data)
 
             cv.imshow("Frame", frame)
 
@@ -48,6 +47,6 @@ class QRReader:
             if key == 27:
                 break
             sleep(0.5)
-            crude_run_time += 0.6
+            crude_run_time += 1
         return ''
 
