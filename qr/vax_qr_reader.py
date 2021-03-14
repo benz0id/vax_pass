@@ -22,21 +22,24 @@ class QRReader:
             return data
         else:
             raise QRReadError("Failed to fetch data from image")
-            
-        cap = cv2.VideoCapture(0)
-        
+
+    def read_qr_camera(self) -> str:
+        """Reads qr code from camera"""
+
+        cap = cv.VideoCapture(0)
+
         while True:
-            
-            -, frame = cap.read()
-            
+
+            _, frame = cap.read()
+
             decodedObjects = pyzbar.detectAndDecode(frame)
-            
+
             for obj in decodedObjects:
-                print(obj.data)
-            
-            cv2.imshow("Frame",frame)
-            
-            key = cv2.keywait(1)
-            
+                return obj.data
+
+            cv.imshow("Frame", frame)
+
+            key = cv.waitKey(1)
+
             if key == 27:
                 break
