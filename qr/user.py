@@ -37,7 +37,7 @@ Vaccination Status: {}
     def create_user(self):
         # asks vaccination status (must be 'Yes' or 'No')
         vax_input = ""
-        while vax_input != "Yes" or vax_input != "No":
+        while vax_input not in ['Yes', 'yes', 'No', 'no']:
             vax_input = input("Have you been vaccinated? (Yes or No): ")
         
         # converts to Boolean
