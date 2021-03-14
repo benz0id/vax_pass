@@ -9,10 +9,10 @@ class QRGenerator:
     ---Attributes---
 
     """
-    qr: qrcode.QRCode
+    _qr: qrcode.QRCode
 
     def __init__(self):
-        self.qr = qrcode.QRCode(
+        self._qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_H,
             box_size=10,
@@ -25,10 +25,10 @@ class QRGenerator:
         """
 
         dest_path = os.path.join(dest, "qrcode.png")
-        self.qr.add_data(user.get_user_string())
-        self.qr.make(fit=True)
-        img = self.qr.make_image(fill_color="black", back_color="white")
-        self.qr.clear()
+        self._qr.add_data(user.get_user_string())
+        self._qr.make(fit=True)
+        img = self._qr.make_image(fill_color="black", back_color="white")
+        self._qr.clear()
         img.save(dest_path)
         # TODO handle image deletion
 
