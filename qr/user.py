@@ -1,6 +1,6 @@
 from qr_io_exceptions import QRReadError
 from typing import Tuple
-from db_gateway.sheets_gw import LoadDatabaseError, SheetsGateway
+#from db_gateway.sheets_gw import LoadDatabaseError, SheetsGateway
 
 class User:
     """A class to store a user's data.
