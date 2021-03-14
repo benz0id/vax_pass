@@ -19,7 +19,10 @@ class QRReader:
         else:
             return None
 
-
+    """TODO:
+    -write make_user which can convert a qr code to a user
+    -if possible, make it two-way compatible; have it in both this and user.py
+    """
 
 
 
