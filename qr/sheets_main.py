@@ -13,7 +13,7 @@ print(user)
 qr = QRGenerator()
 qr.generate_simple_qr(user, os.path.join("qr_images_output"))
 
-image = Image.open(r"C:\Users\Evan\Desktop\Laurier_Workspace\CP 363\vax_pass_github\qr\qr_images_output\qrcode.png")
+image = Image.open(os.path.join("qr_images_output", "qrcode.png"))
 image.show()
 
 reader = QRReader()
