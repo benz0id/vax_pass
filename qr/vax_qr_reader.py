@@ -1,7 +1,7 @@
 import cv2 as cv
 import os.path
-import pyzbar.pyzbar as pyzbar
 from qr_io_exceptions import QRReadError
+from time import sleep
 
 
 class QRReader:
@@ -28,14 +28,18 @@ class QRReader:
 
         cap = cv.VideoCapture(0)
 
-        while True:
+        data = ''
+
+        while len(data.split(":")) != 4:
 
             _, frame = cap.read()
 
-            decodedObjects = pyzbar.detectAndDecode(frame)
+            data, pts, straight_qrcode = self._detector.detectAndDecode(frame)
 
-            for obj in decodedObjects:
-                return obj.data
+            if len(data.split(":")) == 4:
+                return data
+
+            print(data)
 
             cv.imshow("Frame", frame)
 
@@ -43,3 +47,5 @@ class QRReader:
 
             if key == 27:
                 break
+
+            sleep(0.5)
