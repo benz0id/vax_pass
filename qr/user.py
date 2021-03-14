@@ -15,6 +15,7 @@ class User:
     _last_name: str
     _birthday: int
 
+    #Initializes User class 
     def __init__(self):
         self._vax = None
         self._first_name = ""
