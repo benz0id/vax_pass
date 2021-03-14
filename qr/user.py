@@ -17,7 +17,7 @@ class User:
         self._birthday = 0
         #TODO
 
-    def get_user_string(self) -> str:
+    def get_user_string(self):
         """Returns a succinct representation of the users attributes."""
         birthday_string = str(self._birthday)
         birthday_string = birthday_string[0:4] + "/" + birthday_string[4:6] + "/" + birthday_string[6:8]
@@ -27,10 +27,10 @@ class User:
         if self._vax is True:
             vax_string = "Vaccinated"
         
-        user_string = """Name: {} {}
-Date of Birth: {}
-Vaccination Status: {}
-""".format(self._first_name, self._last_name, birthday_string, vax_string)
+        user_string = ""
+        user_string = ("Name: {} {}Date of Birth: {}Vaccination Status: {}".format(self._first_name, self._last_name, birthday_string, vax_string))
+
+        print(user_string)
         
         return user_string #TODO
     
