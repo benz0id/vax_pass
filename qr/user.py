@@ -37,7 +37,7 @@ Vaccination Status: {}
     def create_user(self):
         # asks vaccination status (must be 'Yes' or 'No')
         vax_input = ""
-        while vax_input != "Yes" and vax_input != "No":
+        while vax_input != "Yes" or vax_input != "No":
             vax_input = input("Have you been vaccinated? (Yes or No): ")
         
         # converts to Boolean
@@ -51,7 +51,7 @@ Vaccination Status: {}
         self._last_name = input("What is your last name?: ")
         
         # gets birthday (must be 8 digits)
-        while self._birthday < 10000000 and self._birthday > 99999999:
+        while self._birthday < 10000000 or self._birthday > 99999999:
             self._birthday = int(input("What is your date of birth? (YYYYMMDD): "))
         
         
