@@ -36,8 +36,13 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
         return user_string #TODO
     
     def get_qr_data(self):
-        """Returns users attributes in a readable format for the qr generator."""
-        return
+        """Returns users attributes in a readable format for the qr generator.
+        
+        Format is: vax:first_name:last_name:birthday"""
+        
+        qr_string = "{}:{}:{}:{}".format(self._vax, self._first_name, self._last_name, self._birthday)
+        
+        return qr_string
     
 
     def create_user(self):
