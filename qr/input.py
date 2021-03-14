@@ -16,7 +16,7 @@ def user_input():
     while birthday < 10000000 or birthday > 99999999:
         birthday = int(input("What is your date of birth? (YYYYMMDD): "))
     
-    
+    #prints either statement depending on user answers.
     if vax == True:
         print("{} {} has been vaccinated.".format(first_name, last_name))
     else:
