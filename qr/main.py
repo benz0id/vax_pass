@@ -6,7 +6,7 @@ from user import *
 
 user = User()
 user.create_user()
-print(user.get_user_string)
+print(user.get_user_string())
 
 '''qr = QRGenerator()
 qr.generate_simple_qr(vax, first, last, birthday, 0, os.path.join(
