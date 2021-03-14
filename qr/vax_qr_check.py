@@ -26,7 +26,7 @@ class QRCheck:
         
         # update reader with idnum
         
-        while found == False and index < range(len(user_ids)):
+        while found == False and index < len(user_ids):
             if data[4] == user_ids[index]:
                 found = True
                 
