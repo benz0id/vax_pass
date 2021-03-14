@@ -23,14 +23,14 @@ class QRReader:
         else:
             raise QRReadError("Failed to fetch data from image")
 
-    def read_qr_camera(self) -> str:
-        """Reads qr code from camera"""
+    def read_qr_camera(self, runtime: int) -> str:
+        """Reads qr code from camera. Tries for <runtime> seconds."""
 
         cap = cv.VideoCapture(0)
 
         data = ''
-
-        while len(data.split(":")) != 4:
+        crude_run_time = 0
+        while len(data.split(":")) != 4 & crude_run_time < runtime:
 
             _, frame = cap.read()
 
@@ -47,5 +47,7 @@ class QRReader:
 
             if key == 27:
                 break
-
             sleep(0.5)
+            crude_run_time += 0.6
+        return ''
+

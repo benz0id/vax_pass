@@ -2,11 +2,10 @@ import gspread
 import os.path
 from typing import List
 from time import sleep
-
 from oauth2client.service_account import ServiceAccountCredentials
 
-JSON_PATH = os.path.join("db_gateway", "my_creds.json")
-SPREADSHEET_NAME = 'Dummy Database'
+JSON_PATH = "my_creds.json"
+SPREADSHEET_NAME = 'Users'
 
 SEMI = 's'
 FULL = 'f'
@@ -32,10 +31,10 @@ def get_client() -> gspread.client:
 
 
 def get_sheet(client: gspread.client,
-              sheet_name: str) -> gspread.Spreadsheet:
+              sheet_name: str) -> gspread.Worksheet:
     """Opens the spreadsheet with <sheet_name> using the given <client>.
     Raises: gspread.SpreadsheetNotFound if the spreadsheet is not found."""
-    return client.open(sheet_name).Sheet1
+    return client.open(sheet_name).sheet1
 
 
 class SheetsGateway:
@@ -51,7 +50,7 @@ class SheetsGateway:
         """Initialises the sheets gateway. Iff mode == SEMI, loads first names,
         last name, and user ids. Iff <mode> == FULL, loads the full suite of
         user data."""
-        self.sheet = get_sheet(get_client(), SPREADSHEET_NAME).sheet1
+        self.sheet = get_sheet(get_client(), SPREADSHEET_NAME)
         self._first_names = []
         self._last_names = []
         self._birthdays = []
@@ -131,4 +130,4 @@ class SheetsGateway:
 
     def get_birthdays(self) -> List[int]:
         """Gets a list of all user birthdays"""
-        return self._user_SINs
+        return self._birthdays
