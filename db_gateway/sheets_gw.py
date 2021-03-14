@@ -77,8 +77,8 @@ class SheetsGateway:
             try:
                 self._first_names = self.sheet.col_values(1)[1:]
                 self._last_names = self.sheet.col_values(2)[1:]
-                self._user_ids = self.sheet.col_values(3)[1:]
-                self._birthdays = self.sheet.col_values(4)[1:]
+                self._user_ids = self.sheet.col_values(4)[1:]
+                self._birthdays = self.sheet.col_values(3)[1:]
                 self._user_SINs = self.sheet.col_values(5)[1:]
                 success = True
             except gspread.exceptions.APIError:
@@ -124,7 +124,7 @@ class SheetsGateway:
         """If a user with <sin> exists, returns the index of that user.
         Otherwise, returns -1."""
         for i in range(0, len(self._user_SINs)):
-            if self._user_SINs[i] == sin:
+            if int(self._user_SINs[i]) == sin:
                 return i
         return -1
 

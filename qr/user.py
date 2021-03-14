@@ -85,7 +85,7 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
         self.create_user()
         sin = 0
         while sin < 100000000 or sin > 999999999:
-            sin = input("What is your SIN")
+            sin = int(input("What is your SIN: "))
 
         print("Validating...")
         try:
@@ -101,7 +101,7 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
             print("Name does not match entry in our database.")
         elif db.get_last_names()[sin_ind] != self._last_name:
             print("Name does not match entry in our database.")
-        elif db.get_birthdays()[sin_ind] != self._birthday:
+        elif int(db.get_birthdays()[sin_ind]) != self._birthday:
             print("Birthday does not match entry in our database.")
         else:
             print("You have successfully registered. Welcome, " +
