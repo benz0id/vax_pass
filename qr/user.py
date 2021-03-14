@@ -4,7 +4,6 @@ from db_gateway.sheets_gw import LoadDatabaseError, SheetsGateway
 
 class User:
     """A class to store a user's data.
-
     ---Attributes---
     vax - has the user been vaccinated? (Boolean)
     first_name - user's first name (String)
@@ -47,7 +46,6 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
 
     def get_qr_data(self):
         """Returns users attributes in a readable format for the qr generator.
-
         Format is: vax:first_name:last_name:birthday"""
 
         qr_string = "{}:{}:{}:{}".format(self._vax, self._first_name, self._last_name, self._birthday)
@@ -134,8 +132,6 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
         except ValueError:
             raise QRReadError("Failed to convert string to int, "
                               "assuming bad QR read")
-
-
 
 
 
