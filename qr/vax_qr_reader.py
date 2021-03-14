@@ -1,5 +1,6 @@
 import cv2 as cv
 import os.path
+from qr_io_exceptions import QRReadError
 
 class QRReader:
     """Pulls COVID data from a QR code"""
@@ -8,7 +9,7 @@ class QRReader:
     def __init__(self):
         self._detector = cv.QRCodeDetector()
 
-    def read_qr(self, qr_path: os.path) -> str or None:
+    def read_qr(self, qr_path: os.path) -> str:
         """Reads a string from a given image containing a QR code contained in
         <path>. Returns a string if data is readable, none otherwise."""
 
@@ -17,15 +18,4 @@ class QRReader:
         if pts is not None:
             return data
         else:
-            return None
-
-    """TODO:
-    -write make_user which can convert a qr code to a user
-    -if possible, make it two-way compatible; have it in both this and user.py
-    """
-
-
-
-
-
-
+            raise QRReadError("Failed to fetch data from image")
