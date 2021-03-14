@@ -47,7 +47,6 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
 
         return qr_string
 
-
     def create_user(self):
         # asks vaccination status (must be 'Yes' or 'No')
         vax_input = ""
@@ -81,16 +80,7 @@ Vaccination Status: {}""".format(self._first_name, self._last_name, birthday_str
         vax:first_name:last_name:birthday"""
         num_attr = 4
         try:
-            i = 0
-            j = 0
-            attribs = ['']
-            while i < len(user_str):
-                if user_str[i] == ":":
-                    attribs.append('')
-                    j += 1
-                else:
-                    attribs[j].join(user_str[i])
-                i += 1
+            attribs = user_str.split(':')
             if num_attr != len(attribs):
                 raise QRReadError("Too many attributes read, assuming corrupted"
                                   " read")
