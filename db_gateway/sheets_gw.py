@@ -31,23 +31,46 @@ class SheetsGateway:
     _first_names: List[str]
     _last_names: List[str]
     _user_ids: List[int]
-    _user_SIs: List[int]
+    _user_SINs: List[int]
+    _birthdays: List[int]
 
     def __init__(self):
         """Initialises the sheets gateway """
         self.sheet = get_sheet(get_client(), SPREADSHEET_NAME)
 
-    def get_first_names(self):
+    def load_full(self) -> bool:
+        """Loads the full suite of user data. Returns true iff successful"""
+
+    def load_semi(self) -> bool:
+        """Only loads first names, last name, and user ids. Returns true iff
+        successful"""
+
+
+    def get_first_names(self) -> List[str]:
+        """Gets a list containing all user's first names"""
         return self._first_names
 
-    def get_last_names(self):
+    def get_last_names(self) -> List[str]:
+        """Gets a list containing all user's last names"""
         return self._last_names
 
-    def get_user_ids(self):
+    def get_user_ids(self) -> List[int]:
+        """Gets a list of all user ids"""
         return self._user_ids
 
-    def get_SIs(self):
-        return self._user_SIs
+    def get_SINdex(self, sin: int) -> int:
+        """If a user with <sin> exists, returns the index of that user.
+        Otherwise, returns -1."""
+        for i in range(0, len(self._user_SINs)):
+            if self._user_SINs[i] == sin:
+                return i
+        return -1
+
+    def get_birthdays(self) -> List[int]:
+        """Gets a list of all user birthdays"""
+        return self._user_SINs
+
+
 
 
 
